@@ -13,6 +13,8 @@ freebsd_13_task:
     - cd build
     - ../configure
     - make -j$(sysctl -n hw.ncpu)
+  debug_test_script:
+    sh debug_script.sh
   test_script:
     - cd build
     - make test
