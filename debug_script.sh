@@ -30,6 +30,4 @@ debug_test()
 }
 
 cd build
-debug_test test_urllib2net
-debug_test test_asyncio
-debug_test test_dtrace
+debug_test $1

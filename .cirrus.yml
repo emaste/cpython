@@ -14,8 +14,12 @@ freebsd_13_task:
     - cd build
     - ../configure
     - make -j$(sysctl -n hw.ncpu)
-  debug_test_script:
-    sh debug_script.sh
+  debug_urllib2net_script:
+    sh debug_script.sh test_urllib2net
+  debug_asyncio_script:
+    sh debug_script.sh test_asyncio
+  debug_dtrace_script:
+    sh debug_script.sh test_dtrace
   test_script:
     - cd build
     - make test
