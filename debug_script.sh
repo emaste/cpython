@@ -14,8 +14,8 @@ debug_test()
 	info &
 	pid=$!
 	timeout 10m make test TESTOPTS="-v $1"
-	kill $pid
 	rv=$?
+	kill $pid
 	case $rv in
 	0)
 		echo "*** success"
