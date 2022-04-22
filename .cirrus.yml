@@ -6,6 +6,7 @@ freebsd_13_task:
   network_setup_script:
     - sysctl net.inet.tcp.blackhole=0
     - sysctl net.inet.udp.blackhole=0
+    - net.inet.tcp.keepinit=15000
   install_script:
     pkg install -y pkg
   build_script:
