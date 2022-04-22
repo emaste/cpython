@@ -4,7 +4,7 @@ info()
 {
 	sleep 60
 	echo "--- Diagnostic info:"
-	ps -d
+	ps -ad
 }
 
 debug_test()
