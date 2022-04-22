@@ -22,4 +22,4 @@ freebsd_13_task:
     sh debug_script.sh test_dtrace
   test_script:
     - cd build
-    - make test
+    - make test TESTOPTS="-u-network"
