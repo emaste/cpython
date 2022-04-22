@@ -12,7 +12,7 @@ freebsd_13_task:
   build_script:
     - mkdir build
     - cd build
-    - ../configure --with-dtrace
+    - ../configure
     - make -j$(sysctl -n hw.ncpu)
   debug_urllib2net_script:
     sh debug_script.sh test_urllib2net
