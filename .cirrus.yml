@@ -16,4 +16,4 @@ freebsd_task:
   test_script:
     - cd build
     # dtrace fails to build on FreeBSD - see gh-73263
-    - make test TESTOPTS="-x test_dtrace -x test_asyncio -x test_imaplib -x test_socket"
+    - make test TESTOPTS="-x test_dtrace -x test_asyncio -x test_imaplib -x test_socket -x test_urllib2net"
