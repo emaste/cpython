@@ -3,6 +3,11 @@ freebsd_task:
     matrix:
     - image: freebsd-12-3-release-amd64
     - image: freebsd-13-0-release-amd64
+  # GCP image defaults to TCP/UDP blackhole - see gh-91824
+  network_setup_script:
+    - sysctl net.inet.tcp.blackhole=0
+    - sysctl net.inet.udp.blackhole=0
+    - sysctl net.inet.tcp.keepinit=15000
   build_script:
     - mkdir build
     - cd build
