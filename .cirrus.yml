@@ -9,6 +9,7 @@ freebsd_task:
     - ../configure
     - make -j$(sysctl -n hw.ncpu)
   test_script:
+    - rm Lib/test/test_dtrace.py
     - cd build
     # dtrace fails to build on FreeBSD - see gh-73263
-    - make test TESTOPTS="-u-network -x test_dtrace"
+    - make test TESTOPTS="-u-network"
