@@ -11,4 +11,4 @@ freebsd_task:
   test_script:
     - cd build
     # dtrace fails to build on FreeBSD - see gh-73263
-    - make test TESTOPTS="-u-network -x test_dtrace"
+    - make test TESTOPTS="-x test_dtrace -u-network"
