@@ -2,6 +2,9 @@ freebsd_task:
   freebsd_instance:
     matrix:
     - image: freebsd-13-2-release-amd64
+  sysctl_script:
+    - sysctl net.inet.tcp.blackhole=0
+    - sysctl net.inet.udp.blackhole=0
   build_script:
     - mkdir build
     - cd build
@@ -10,4 +13,4 @@ freebsd_task:
   test_script:
     - cd build
     # dtrace fails to build on FreeBSD - see gh-73263
-    - make buildbottest TESTOPTS="-j2 -u-network -x test_dtrace"
+    - make buildbottest TESTOPTS="-j2 -x test_dtrace"
